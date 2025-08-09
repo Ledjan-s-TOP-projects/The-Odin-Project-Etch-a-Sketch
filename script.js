@@ -1,18 +1,29 @@
-//Create a div container on the HTML file
-//query the container div
-//Create a 16X16 grid of square divs
-//Use flexbox to arrange the divs as a grid
-//Use CSS to style them
-
+const body = document.querySelector("body");
 const container = document.querySelector(".container");
+const options = document.createElement("div");
+options.setAttribute("class", "options");
+body.appendChild(options);
 
-// function createGrid(number) {
-//   const numberOfCells = number * number;
-//   for (let i = 0; i < numberOfCells; i++) {
-//     document.createElement("div");
-//     div.setAttribute("class", "cell");
-//     return div;
-//   }
-// }
+const gridSizeButton = document.createElement("button");
+options.appendChild(gridSizeButton);
+gridSizeButton.setAttribute("class", "btn");
+gridSizeButton.textContent = "Grid Size";
 
-// const gridSize = createGrid(16);
+let userInput = 16;
+createGrid(userInput);
+
+gridSizeButton.addEventListener("click", (e) => {
+  userInput = prompt("Enter a number between 1-100 to set the grid size.");
+  createGrid(userInput);
+  return userInput;
+});
+
+function createGrid(userInput) {
+  const numberOfCells = userInput * userInput;
+  for (let i = 0; i < numberOfCells; i++) {
+    const cell = document.createElement("div");
+    container.appendChild(cell);
+    cell.setAttribute("class", "cell");
+    container.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`;
+  }
+}
