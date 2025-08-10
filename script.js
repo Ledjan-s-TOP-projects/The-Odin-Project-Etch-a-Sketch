@@ -11,7 +11,7 @@ gridSizeButton.addEventListener("click", () => {
   const userInput = prompt(
     "Enter a number between 1-100 to set the grid size."
   );
-  const newSize = parseInt(userInput, 10);
+  const newSize = parseFloat(userInput);
   console.log(newSize);
 
   if (userInput === null) {
@@ -20,21 +20,11 @@ gridSizeButton.addEventListener("click", () => {
     alert("Try again using only numbers between 1-100 to set the grid size.");
   } else if (newSize < 0 || newSize > 101) {
     alert("Try again! Enter a number between 1-100 to set the grid size");
-  } else if (!Number.isInteger(newSize~)) {
+  } else if (!Number.isInteger(newSize)) {
     alert("Try again using whole numbers between 1-100 without decimals.");
   } else {
     createGrid(newSize);
   }
-
-  // if (newSize === null) {
-  //   createGrid();
-  // } else if (newSize <= 0 || newSize > 100) {
-  //   alert("Try again! Enter a number between 1-100 to set the grid size");
-  // } else if (isNaN(newSize)) {
-  //   alert("Try again! Enter only numbers between 1-100 to set the grid size");
-  // } else {
-  //   createGrid(newSize);
-  // }
 });
 
 function createGrid(size = 16) {
