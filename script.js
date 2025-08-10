@@ -20,7 +20,7 @@ gridSizeButton.addEventListener("click", () => {
     alert("Try again using only numbers between 1-100 to set the grid size.");
   } else if (newSize < 0 || newSize > 101) {
     alert("Try again! Enter a number between 1-100 to set the grid size");
-  } else if (!Number.isInteger(newSize)) {
+  } else if (!Number.isInteger(newSize~)) {
     alert("Try again using whole numbers between 1-100 without decimals.");
   } else {
     createGrid(newSize);
