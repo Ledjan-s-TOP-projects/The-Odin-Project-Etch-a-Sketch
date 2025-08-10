@@ -12,6 +12,9 @@ body {
 .options {
   height: 100px;
   width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container {

@@ -2,10 +2,20 @@ const body = document.querySelector("body");
 const options = document.querySelector(".options");
 const container = document.querySelector(".container");
 
+container.addEventListener("mouseover", (event) => {
+  if (event.target.classList.contains("cell")) {
+    event.target.style.backgroundColor = "black";
+  }
+});
+
 const gridSizeButton = document.createElement("button");
 options.appendChild(gridSizeButton);
 gridSizeButton.setAttribute("class", "btn");
 gridSizeButton.textContent = "Grid Size";
+
+const clearButton = document.createElement("button");
+options.appendChild(clearButton);
+clearButton.textContent = "Clear";
 
 gridSizeButton.addEventListener("click", () => {
   const userInput = prompt(
@@ -27,7 +37,11 @@ gridSizeButton.addEventListener("click", () => {
   }
 });
 
-function createGrid(size = 16) {
+clearButton.addEventListener("click", () => {
+  clear();
+});
+
+function createGrid(size = 100) {
   clearGrid();
   const numberOfCells = size * size;
   for (let i = 0; i < numberOfCells; i++) {
@@ -41,6 +55,12 @@ function createGrid(size = 16) {
 
 function clearGrid() {
   container.innerHTML = "";
+}
+
+function clear() {
+  for (const cell of container.children) {
+    cell.style.backgroundColor = "white";
+  }
 }
 
 createGrid();
