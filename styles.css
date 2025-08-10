@@ -11,18 +11,20 @@ body {
 
 .options {
   height: 100px;
-  width: 600px;
-  border: black solid 1px;
+  width: 800px;
 }
 
 .container {
-  border: solid 2px black;
-  width: 600px;
-  height: 600px;
-  display: grid;
-  /* this style comes form script.js -> grid-template-columns: repeat(16, 1fr); */
+  border: solid black 1px;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-self: center;
 }
 
 .cell {
-  border: 1px solid black;
+  border: 0.1px solid black;
+  box-sizing: border-box;
 }
