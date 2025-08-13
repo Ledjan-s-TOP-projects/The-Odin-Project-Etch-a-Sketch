@@ -29,5 +29,22 @@ body {
 
 .cell {
   border: 0.1px solid black;
+  background-color: white;
   box-sizing: border-box;
+}
+
+.blackBtn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.randomColorBtn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #ff0000, #0000ff);
+  cursor: pointer;
 }
